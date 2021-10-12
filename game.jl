@@ -38,5 +38,17 @@ function request(board::Minefield, ix::Tuple)::Int
     end
 end
 
-
+"""
+Submit a grid of flags to check if the player has identified all the mines
+correctly. Returns 1 if correct, and -1 if any mine is misidentified. In either
+case, the game should end--with a win if correct and a failure if incorrect, so
+that clients cannot repeatedly guess different configurations.
+"""
+function submit(board::Minefield, flags::Array{Bool})
+    if all(board .== flags)
+        return 1
+    else
+        # Game over
+        return -1
+    end
 end

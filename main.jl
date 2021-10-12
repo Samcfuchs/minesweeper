@@ -8,7 +8,6 @@ N = 20
 
 Tile = Union{Int, Char}
 
-
 board = Minesweeper.make_board(H, W, N)
 
 info = Array{Tile, 2}(undef, H, W)
@@ -35,7 +34,7 @@ function explorezero(r,c)
             info[r,c] = ct
             return
         end
-        
+
         info[r,c] = ' '
 
         for i in max(1, r-1):min(H, r+1)
@@ -45,7 +44,7 @@ function explorezero(r,c)
         end
     end
 end
-    
+
 
 
 while true
