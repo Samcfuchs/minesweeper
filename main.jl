@@ -4,7 +4,7 @@ H = 16
 W = 16
 N = 20
 
-#@enum Tile Flag Unk
+module Client
 
 Tile = Union{Int, Char}
 
@@ -91,3 +91,4 @@ while true
 
 end
 
+end

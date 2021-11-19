@@ -28,6 +28,10 @@ function neighbors(board::Minefield, ix::Index)::Int
     sum(neighborhood .* filt)
 end
 
+"""
+Request the value of a particular tile. If that tile is a mine, though, the
+function returns -1 and ends the game.
+"""
 function request(board::Minefield, ix::Tuple)::Int
     ix = Index(ix)
     if board[ix]
